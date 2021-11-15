@@ -1,0 +1,44 @@
+<div class="container-fluid h-100">
+    <div class="row">
+        <mat-toolbar>
+            <span>Movie Graph Data</span>
+        </mat-toolbar>
+    </div>
+    <div class="row m-3">
+        <div class="col-2">
+            <div class="row">
+                <mat-form-field appearance="fill">
+                    <mat-label>Actors</mat-label>
+                    <mat-select multiple>
+                        <mat-option>v1</mat-option>
+                        <mat-option>v2</mat-option>
+                        <mat-option>v3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field appearance="fill">
+                    <mat-label>Characters</mat-label>
+                    <mat-select multiple>
+                        <mat-option>v1</mat-option>
+                        <mat-option>v2</mat-option>
+                        <mat-option>v3</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field appearance="fill">
+                    <mat-label>Movies</mat-label>
+                    <mat-select multiple>
+                        <mat-option>v1</mat-option>
+                        <mat-option>v2</mat-option>
+                        <mat-option>v3</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="col-10 border border-dark rounded">
+            <app-graph-display></app-graph-display>
+        </div>
+    </div>
+</div>

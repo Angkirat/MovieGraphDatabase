@@ -5,6 +5,7 @@ import { GraphViewRoutingModule } from './graph-view-routing.module';
 import { GraphViewComponent } from './graph-view.component';
 import { SharedComponentsModule } from '../shared-components/shared-components.module';
 import { GraphDisplayComponent } from './components/graph-display/graph-display.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { GraphDisplayComponent } from './components/graph-display/graph-display.
   imports: [
     CommonModule,
     GraphViewRoutingModule,
-    SharedComponentsModule
+    SharedComponentsModule,
+    HttpClientModule,
   ]
 })
 export class GraphViewModule { }

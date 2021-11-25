@@ -9,7 +9,7 @@
             <div class="row">
                 <mat-form-field appearance="fill">
                     <mat-label>Actors</mat-label>
-                    <mat-select [(ngModel)]="selectedActor">
+                    <mat-select [(ngModel)]="selectedActor" (ngModelChange)="actorChange()">
                         <mat-option *ngFor="let actor of actorList" [value]="actor">{{actor.name}}</mat-option>
                     </mat-select>
                   </mat-form-field>
@@ -25,14 +25,14 @@
             <div class="row">
                 <mat-form-field appearance="fill">
                     <mat-label>Movies</mat-label>
-                    <mat-select [(ngModel)]="selectedEnt">
+                    <mat-select [(ngModel)]="selectedEnt" (ngModelChange)="EntertainmentChange()">
                         <mat-option *ngFor="let ent of entChannel" [value]="ent">{{ent.name + ' (' + ent.type + ')'}}</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
         </div>
         <div class="col-10 border border-dark rounded">
-            <app-graph-display [ActorSelected]="selectedActor"></app-graph-display>
+            <app-graph-display [selectedType]="selectedEntity" [ActorSelected]="selectedActor" [EntSelected]="selectedEnt"></app-graph-display>
         </div>
     </div>
 </div>

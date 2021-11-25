@@ -14,6 +14,7 @@ export class GraphViewComponent implements OnInit {
   entChannel: EntertainmentChannel[] = [];
   selectedActor!: Actor;
   selectedEnt!: EntertainmentChannel;
+  selectedEntity!: string;
 
   constructor(private entity: EntityPullService) { }
 
@@ -45,6 +46,14 @@ export class GraphViewComponent implements OnInit {
         this.entChannel.push(new EntertainmentChannel('tv', colValues[7], colValues[0], colValues[9], colValues[8]));
       });
     });
+  }
+
+  actorChange(){
+    this.selectedEntity = 'Actor';
+  }
+
+  EntertainmentChange(){
+    this.selectedEntity = 'Entertainment';
   }
 
 }

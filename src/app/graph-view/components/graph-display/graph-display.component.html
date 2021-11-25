@@ -1,15 +1,21 @@
 <div class="container-fluid">
-    <div class="row">
+    <div class="row" *ngIf="selectedType === 'Actor'">
         <h1>{{ActorSelected?.name}}</h1>
     </div>
+    <div class="row" *ngIf="selectedType === 'Entertainment'">
+        <h1>{{EntSelected?.name}}</h1>
+    </div>
     <div class="row">
     </div>
     <div class="row">
         <div class="col">
-            <plotly-plot [data]="graphData.data" [layout]="graphData.layout"></plotly-plot>
+            <plotly-plot [data]="graphData.data" [layout]="graphData.layout" *ngIf="selectedType"></plotly-plot>
         </div>
-        <div class="col">
+        <div class="col" *ngIf="selectedType === 'Actor'">
             <img src="{{ActorSelected?.image}}" height="200px" width="200px">
+        </div>
+        <div class="col" *ngIf="selectedType === 'Entertainment'">
+            <img src="{{EntSelected?.photo_url}}" height="200px" width="200px">
         </div>
     </div>
 </div>

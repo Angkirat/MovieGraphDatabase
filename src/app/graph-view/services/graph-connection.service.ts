@@ -14,14 +14,20 @@ export class GraphConnectionService {
 
   constructor(private http: HttpClient) { }
 
-  getActorsDetails() {
+  getActorsDetails(ActorId: string) {
     console.log('Actors function is running');
-     return this.http.get<any>('https://europe-west1-reactdev-316210.cloudfunctions.net/get_actor_matrix?message=ppl%3A3')
+     return this.http.get<any>('https://europe-west1-reactdev-316210.cloudfunctions.net/get_actor_matrix?message=ppl%3A'+ActorId)
   }
 
-  getEntertainmentDetails() {
+  getEntertainmentDetails(enttype:string, entId:string) {
     console.log('Entertainment function is running');
-     return this.http.get<any>('https://europe-west1-reactdev-316210.cloudfunctions.net/get_work_matrix?message=mov%3A299534')
+    var etype = '';
+    if (enttype === 'movie'){
+      etype = 'mov'
+    }else if (enttype === 'tv'){
+      etype = 'tv';
+    }
+    return this.http.get<any>('https://europe-west1-reactdev-316210.cloudfunctions.net/get_work_matrix?message='+etype+'%3A'+entId)
   }
 
 }
